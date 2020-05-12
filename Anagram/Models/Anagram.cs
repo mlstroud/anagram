@@ -12,6 +12,11 @@ namespace Anagrams.Models
       Word = word;
     }
 
+    public static void Add(string word)
+    {
+      _wordList.Add(word);
+    }
+
     public static List<string> GetList()
     {
       return _wordList;
