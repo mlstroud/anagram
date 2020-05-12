@@ -1,12 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System;
 using Anagrams.Models;
 
 namespace Anagrams.TestTools
 {
   [TestClass]
-  public class AnagramTests
+  public class AnagramTests : IDisposable
   {
+    public void Dispose()
+    {
+      Anagram.ClearAll();
+    }
+
     [TestMethod]
     public void AnagramConstructor_CreatesInstanceOfAnagram_Anagram()
     {
