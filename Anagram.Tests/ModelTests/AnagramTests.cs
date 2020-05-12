@@ -77,7 +77,7 @@ namespace Anagrams.TestTools
       Anagram anagram = new Anagram(word);
 
       anagram.SortWord();
-      string result = anagram.Word;
+      string result = anagram.SortedWord;
 
       Assert.AreEqual(sortedWord, result);
     }
@@ -94,9 +94,28 @@ namespace Anagrams.TestTools
       Anagram.Add(word2);
 
       Anagram.SortList();
-      List<string> result = Anagram.GetList();
+      List<string> result = Anagram.GetSortedList();
 
       CollectionAssert.AreEqual(sortedList, result);
+    }
+
+    [TestMethod]
+    public void Match_ReturnsMatchingWords_ListString()
+    {
+      string word = "east";
+      List<string> matches = new List<string> { "seat", "eats" };
+      Anagram anagram = new Anagram(word);
+      Anagram.Add("dear");
+      Anagram.Add("seat");
+      Anagram.Add("pier");
+      Anagram.Add("eats");
+      Anagram.Add("sand");
+
+      anagram.SortWord();
+      Anagram.SortList();
+      List<string> result = Anagram.GetAnagrams();
+
+      CollectionAssert.AreEqual(matches, result);
     }
   }
 }
