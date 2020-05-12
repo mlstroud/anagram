@@ -73,7 +73,7 @@ namespace Anagrams.TestTools
     public void SortWord_SortsWord_String()
     {
       string word = "dear";
-      string sortedWord = "aedr";
+      string sortedWord = "ader";
       Anagram anagram = new Anagram(word);
 
       anagram.SortWord();
