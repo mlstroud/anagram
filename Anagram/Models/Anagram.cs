@@ -35,5 +35,15 @@ namespace Anagrams.Models
 
       Word = string.Join("", letters);
     }
+
+    public static void SortList()
+    {
+      for (int i = 0; i < _wordList.Count; i++)
+      {
+        char[] letters = _wordList[i].ToCharArray();
+        Array.Sort(letters);
+        _wordList[i] = string.Join("", letters);
+      }
+    }
   }
 }
