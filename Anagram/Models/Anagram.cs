@@ -7,6 +7,7 @@ namespace Anagrams.Models
 
     public Anagram(string word)
     {
+      Word = word;
     }
   }
 }
