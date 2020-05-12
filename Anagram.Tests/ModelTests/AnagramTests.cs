@@ -11,6 +11,7 @@ namespace Anagrams.TestTools
     {
       Anagram anagram = new Anagram("test");
       Assert.AreEqual(typeof(Anagram), anagram.GetType());
+
     }
   }
 }
