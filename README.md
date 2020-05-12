@@ -11,7 +11,6 @@ _The application will take a given word, and return a list of possible anagrams.
 
 ## Specs
 
-
 ## Setup/Installation Requirements
 
 1. Clone this repository from GitHub.
