@@ -45,7 +45,7 @@ namespace Anagrams
       }
       else
       {
-        Console.WriteLine("Anagrams for " + Anagram.Word);
+        Console.WriteLine("Anagrams or partial matchhes for " + Anagram.Word);
         for (int i = 0; i < anagrams.Count; i++)
         {
           Console.WriteLine((i + 1) + ". " + anagrams[i]);

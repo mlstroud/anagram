@@ -59,13 +59,29 @@ namespace Anagrams.Models
       Anagram.SortWord();
       Anagram.SortList();
       List<string> matches = new List<string>();
-      Console.WriteLine(_sortedWordList.Count + " " + _wordList.Count);
 
       for (int i = 0; i < _sortedWordList.Count; i++)
       {
         if (SortedWord == _sortedWordList[i])
         {
           matches.Add(_wordList[i]);
+        }
+        else
+        {
+          bool allmatch = true;
+          for (int j = 0; j < SortedWord.Length; j++)
+          {
+            if (!_sortedWordList[i].Contains(SortedWord[j]))
+            {
+              allmatch = false;
+              break;
+            }
+          }
+
+          if (allmatch)
+          {
+            matches.Add(_wordList[i]);
+          }
         }
       }
 
