@@ -60,8 +60,8 @@ namespace Anagrams.TestTools
     {
       string word1 = "dear";
       string word2 = "pier";
-      Anagram anagram1 = new Anagram(word1);
-      Anagram anagram2 = new Anagram(word2);
+      Anagram.Add(word1);
+      Anagram.Add(word2);
       List<string> wordList = new List<string> { word1, word2 };
 
       List<string> result = Anagram.GetList();
