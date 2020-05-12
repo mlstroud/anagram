@@ -54,5 +54,19 @@ namespace Anagrams.TestTools
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetList_ReturnsWords_StringList()
+    {
+      string word1 = "dear";
+      string word2 = "pier";
+      Anagram anagram1 = new Anagram(word1);
+      Anagram anagram2 = new Anagram(word2);
+      List<string> wordList = new List<string> { word1, word2 };
+
+      List<string> result = Anagram.GetList();
+
+      CollectionAssert.AreEqual(wordList, result);
+    }
   }
 }
