@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using Anagrams.Models;
 
 namespace Anagrams.TestTools
@@ -39,9 +40,13 @@ namespace Anagrams.TestTools
     }
 
     [TestMethod]
-    public void GetList_ReturnsListOfWords_List()
+    public void GetList_ReturnsEmptyList_StringList()
     {
+      List<string> newList = new List<string>();
 
+      List<string> result = Anagram.GetList();
+
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
