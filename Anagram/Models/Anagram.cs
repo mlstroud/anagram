@@ -16,5 +16,10 @@ namespace Anagrams.Models
     {
       return _wordList;
     }
+
+    public static void ClearAll()
+    {
+      _wordList.Clear();
+    }
   }
 }
