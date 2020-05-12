@@ -100,7 +100,7 @@ namespace Anagrams.Tests
     }
 
     [TestMethod]
-    public void Match_ReturnsMatchingWords_ListString()
+    public void GetAnagrams_ReturnsMatchingWords_ListString()
     {
       string word = "east";
       List<string> matches = new List<string> { "seat", "eats" };
@@ -110,6 +110,21 @@ namespace Anagrams.Tests
       Anagram.Add("pier");
       Anagram.Add("eats");
       Anagram.Add("sand");
+
+      List<string> result = Anagram.GetAnagrams();
+
+      CollectionAssert.AreEqual(matches, result);
+    }
+
+    [TestMethod]
+    public void GetAnagrams_ReturnsPartialMatches_ListString()
+    {
+      string word = "hat";
+      List<string> matches = new List<string> { "path" };
+      Anagram anagram = new Anagram(word);
+      Anagram.Add("path");
+      Anagram.Add("Pan");
+      Anagram.Add("Bottle");
 
       List<string> result = Anagram.GetAnagrams();
 
