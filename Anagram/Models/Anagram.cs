@@ -5,8 +5,10 @@ namespace Anagrams.Models
 {
   public class Anagram
   {
-    public string Word { get; set; }
+    public static string Word { get; set; }
+    public static String SortedWord { get; set; }
     private static List<string> _wordList = new List<string>();
+    private static List<string> _sortedWordList = new List<string>();
 
     public Anagram(string word)
     {
@@ -23,17 +25,22 @@ namespace Anagrams.Models
       return _wordList;
     }
 
+    public static List<string> GetSortedList()
+    {
+      return _sortedWordList;
+    }
+
     public static void ClearAll()
     {
       _wordList.Clear();
     }
 
-    public void SortWord()
+    public static void SortWord()
     {
       char[] letters = Word.ToCharArray();
       Array.Sort(letters);
 
-      Word = string.Join("", letters);
+      SortedWord = string.Join("", letters);
     }
 
     public static void SortList()
@@ -42,8 +49,16 @@ namespace Anagrams.Models
       {
         char[] letters = _wordList[i].ToCharArray();
         Array.Sort(letters);
-        _wordList[i] = string.Join("", letters);
+        _sortedWordList.Add(string.Join("", letters));
       }
+    }
+
+    public static List<string> GetAnagrams()
+    {
+      Anagram.SortWord();
+      Anagram.SortList();
+
+      return _wordList;
     }
   }
 }

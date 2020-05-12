@@ -27,7 +27,7 @@ namespace Anagrams.TestTools
       string word = "dear";
       Anagram anagram = new Anagram(word);
 
-      string result = anagram.Word;
+      string result = Anagram.Word;
 
       Assert.AreEqual(word, result);
     }
@@ -39,8 +39,8 @@ namespace Anagrams.TestTools
       Anagram anagram = new Anagram(word);
 
       string newWord = "pier";
-      anagram.Word = newWord;
-      string result = anagram.Word;
+      Anagram.Word = newWord;
+      string result = Anagram.Word;
 
       Assert.AreEqual(newWord, result);
     }
@@ -76,8 +76,8 @@ namespace Anagrams.TestTools
       string sortedWord = "ader";
       Anagram anagram = new Anagram(word);
 
-      anagram.SortWord();
-      string result = anagram.SortedWord;
+      Anagram.SortWord();
+      string result = Anagram.SortedWord;
 
       Assert.AreEqual(sortedWord, result);
     }
@@ -111,7 +111,7 @@ namespace Anagrams.TestTools
       Anagram.Add("eats");
       Anagram.Add("sand");
 
-      anagram.SortWord();
+      Anagram.SortWord();
       Anagram.SortList();
       List<string> result = Anagram.GetAnagrams();
 
