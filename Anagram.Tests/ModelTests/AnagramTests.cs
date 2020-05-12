@@ -81,5 +81,22 @@ namespace Anagrams.TestTools
 
       Assert.AreEqual(sortedWord, result);
     }
+
+    [TestMethod]
+    public void SortList_SortsList_ListString()
+    {
+      string word1 = "dear";
+      string word2 = "pier";
+      string sortedWord1 = "ader";
+      string sortedWord2 = "eipr";
+      List<string> sortedList = new List<string> { sortedWord1, sortedWord2 };
+      Anagram.Add(word1);
+      Anagram.Add(word2);
+
+      Anagram.SortList();
+      List<string> result = Anagram.GetList();
+
+      CollectionAssert.AreEqual(sortedList, result);
+    }
   }
 }
