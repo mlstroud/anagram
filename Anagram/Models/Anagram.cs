@@ -33,6 +33,7 @@ namespace Anagrams.Models
     public static void ClearAll()
     {
       _wordList.Clear();
+      _sortedWordList.Clear();
     }
 
     public static void SortWord()
@@ -45,9 +46,9 @@ namespace Anagrams.Models
 
     public static void SortList()
     {
-      for (int i = 0; i < _wordList.Count; i++)
+      foreach (string word in _wordList)
       {
-        char[] letters = _wordList[i].ToCharArray();
+        char[] letters = word.ToCharArray();
         Array.Sort(letters);
         _sortedWordList.Add(string.Join("", letters));
       }
@@ -57,8 +58,18 @@ namespace Anagrams.Models
     {
       Anagram.SortWord();
       Anagram.SortList();
+      List<string> matches = new List<string>();
+      Console.WriteLine(_sortedWordList.Count + " " + _wordList.Count);
 
-      return _wordList;
+      for (int i = 0; i < _sortedWordList.Count; i++)
+      {
+        if (SortedWord == _sortedWordList[i])
+        {
+          matches.Add(_wordList[i]);
+        }
+      }
+
+      return matches;
     }
   }
 }
