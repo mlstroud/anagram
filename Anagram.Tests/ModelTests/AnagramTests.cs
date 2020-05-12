@@ -111,8 +111,6 @@ namespace Anagrams.TestTools
       Anagram.Add("eats");
       Anagram.Add("sand");
 
-      Anagram.SortWord();
-      Anagram.SortList();
       List<string> result = Anagram.GetAnagrams();
 
       CollectionAssert.AreEqual(matches, result);
