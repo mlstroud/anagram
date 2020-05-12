@@ -10,6 +10,15 @@ _An Epicodus individual project using C# and MSTest. This project prioritizes un
 _The application will take a given word, and return a list of possible anagrams._
 
 ## Specs
+| Behavior                                                                       | Input                     | Output                     |
+|:-------------------------------------------------------------------------------|:--------------------------|---------------------------:|
+| Program will create new object and store the passed word in memory.            | ... = new Anagram("Test") | Word = "Test"              |
+| Program will return a string result.                                           | Word = "Dear"             | "Dear"                     |
+| Program will store a list of comparison words in memory.                       | "Dear", "Test", "Cake"    | { "Dear", "Test", "Cake" } |
+| Program will sort the user's word alphabetically.                              | "dear"                    | "aedr"                     |
+| Program will sort the list of comparison words alphabetically.                 | "dear", "test", "cake"    | { "aedr", "estt", "acek" } |
+| Program will return a word from the sorted list if it matches the sorted word. | "dear" { "read", "cake" } | "read"                     |
+| Program will return words that are a partial match.                            | "hat" { "path, "cake" }   | "path"                     |
 
 ## Setup/Installation Requirements
 
