@@ -68,5 +68,18 @@ namespace Anagrams.TestTools
 
       CollectionAssert.AreEqual(wordList, result);
     }
+
+    [TestMethod]
+    public void SortWord_SortsWord_String()
+    {
+      string word = "dear";
+      string sortedWord = "aedr";
+      Anagram anagram = new Anagram(word);
+
+      anagram.SortWord();
+      string result = anagram.Word;
+
+      Assert.AreEqual(sortedWord, result);
+    }
   }
 }
