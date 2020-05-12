@@ -24,5 +24,24 @@ namespace Anagrams.TestTools
 
       Assert.AreEqual(word, result);
     }
+
+    [TestMethod]
+    public void SetWord_SetWord_String()
+    {
+      string word = "dear";
+      Anagram anagram = new Anagram(word);
+
+      string newWord = "pier";
+      anagram.Word = newWord;
+      string result = anagram.Word;
+
+      Assert.AreEqual(newWord, result);
+    }
+
+    [TestMethod]
+    public void GetList_ReturnsListOfWords_List()
+    {
+
+    }
   }
 }
