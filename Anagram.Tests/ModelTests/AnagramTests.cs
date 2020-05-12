@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using Anagrams.Models;
 
-namespace Anagrams.TestTools
+namespace Anagrams.Tests
 {
   [TestClass]
   public class AnagramTests : IDisposable
