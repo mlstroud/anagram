@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Anagrams.Models
@@ -25,6 +26,14 @@ namespace Anagrams.Models
     public static void ClearAll()
     {
       _wordList.Clear();
+    }
+
+    public void SortWord()
+    {
+      char[] letters = Word.ToCharArray();
+      Array.Sort(letters);
+
+      Word = string.Join("", letters);
     }
   }
 }
